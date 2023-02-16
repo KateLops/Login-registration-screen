@@ -10,11 +10,14 @@ let flg = document.querySelector("#lg")
 let fpw = document.querySelector("#pw")
 let fmes = document.querySelector("#mes")
 
-BtLogin.addEventListener("click",login);
+BtLogin.addEventListener("click",login)
 
 
 function login() {
     let lg = flg.value;
+
+    localStorage.setItem('name', JSON.stringify(lg));
+
     let pw = fpw.value;
 
     for (const user of users){
@@ -35,10 +38,10 @@ function login() {
 function role(role){
     if(role == "user")
     {
-        document.location.href = "user.html";
+        document.location.href = "user.html"
     }
     else if (role == "admin")
     {
-        document.location.href = "admin.html";
+        document.location.href = "admin.html"
     }
 }
